@@ -1,0 +1,95 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxurious Wrapped Token Generator</title>
+    <script src="https://cdn.jsdelivr.net/npm/web3/dist/web3.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/solana-web3.js/1.31.0/solana-web3.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tronweb/dist/TronWeb.js"></script>
+    <style>
+        body {
+            font-family: 'Poppins', sans-serif;
+            text-align: center;
+            background: url('https://images.unsplash.com/photo-1556761175-4b46a572b786?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80') no-repeat center center fixed;
+            background-size: cover;
+            color: white;
+            padding: 20px;
+        }
+        h1 {
+            font-size: 3em;
+            color: #f0c674;
+            margin-bottom: 20px;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.7);
+        }
+        button, select {
+            padding: 15px 30px;
+            margin: 15px;
+            font-size: 1.2em;
+            border: none;
+            border-radius: 10px;
+            transition: 0.3s ease;
+        }
+        button {
+            background: linear-gradient(to right, #f0c674, #d6ad60);
+            color: #1e1e2f;
+            cursor: pointer;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+        }
+        button:hover {
+            background: linear-gradient(to right, #d6ad60, #f0c674);
+            transform: scale(1.05);
+        }
+        select {
+            background: rgba(255, 255, 255, 0.8);
+            color: #1e1e2f;
+        }
+        #status {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #76c7c0;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+        #history {
+            margin-top: 20px;
+            padding: 20px;
+            border: 2px solid #f0c674;
+            border-radius: 10px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            background: rgba(0, 0, 0, 0.5);
+            overflow-y: auto;
+            height: 200px;
+        }
+        #balance {
+            margin-top: 20px;
+            font-size: 1.5em;
+            color: #f0c674;
+            text-shadow: 1px 1px 5px rgba(0, 0, 0, 0.7);
+        }
+    </style>
+</head>
+<body>
+    <h1>Luxurious Wrapped Token Generator</h1>
+    <p>Connect your wallet and generate wrapped tokens with style.</p>
+    <button id="connect-metamask">💰 Connect MetaMask (BSC)</button>
+    <button id="connect-phantom">🌐 Connect Phantom (Solana)</button>
+    <button id="connect-tronlink">🔗 Connect TronLink (Tron)</button>
+    <br>
+    <label for="token-select">Select Token:</label>
+    <select id="token-select">
+        <option value="WBTC">WBTC (Wrapped Bitcoin)</option>
+        <option value="WETH">WETH (Wrapped Ethereum)</option>
+        <option value="WUSDT">WUSDT (Wrapped USDT)</option>
+        <option value="WLTC">WLTC (Wrapped Litecoin)</option>
+        <option value="WXRP">WXRP (Wrapped XRP)</option>
+        <option value="WTRX">WTRX (Wrapped TRX)</option>
+    </select>
+    <button id="mint-token" disabled>🪙 Mint Selected Token</button>
+    <div id="status"></div>
+    <div id="balance"><strong>Balance:</strong> <span id="balance-info">-</span></div>
+    <div id="history"><strong>Transaction History:</strong><br></div>
+</body>
+</html>
